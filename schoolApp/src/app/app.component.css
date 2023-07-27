@@ -1,0 +1,73 @@
+
+app-menu{
+    position: fixed;
+    width: 100%;
+    top:0px;
+    height:4rem;
+    z-index: 2;
+}
+main{
+    position: absolute;
+    width: 100%;
+    top:4rem;
+    z-index: 1;
+}
+app-side-bar{
+    position: absolute;
+    left: 0rem;
+    width:60px;
+    height: calc(100vh - 4rem);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    background-color: rgba(34,34,34,1);
+    border-top: 1px solid white;
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: width 250ms ease-in;
+}
+.display-area{
+    position: absolute;
+    left: 250px;
+    width: calc(100% - 250px);
+    transition: left 250 ease-in, width 250ms ease-in;
+}
+.app-side-bar-open{
+    width: 250px;
+}
+.display-area-shrink{
+    width:calc(100% - 250px);
+    left: 250px;
+}
+/* .check{
+    height: 900px;
+    width: 100%;
+    /* background-color: rgb(197, 184, 159); */
+/* }
+p{
+    font-style: italic;
+    font-family:sans-serif;
+    font-weight:bolder;
+} */ 
+
+/* old coding */
+
+/* img{
+    height: 50px;
+}
+
+#home{
+    margin-left: 80px;
+}
+span{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(118, 6, 6);
+    font-weight: 400px;
+     */
+
+/* header{
+    position: fixed;
+    width: 100%;
+    top:0px;
+    height: 4rem;
+    z-index: 2;
+} */
+

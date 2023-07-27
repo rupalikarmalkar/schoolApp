@@ -1,0 +1,53 @@
+<div class="side-nav-content">
+    <ul class="nav-list" [ngClass]="{'nav-list-open':sideNavStatus}">
+        <!-- <li class="nav-list-item "  *ngFor="let item of list">
+
+            <i class="{{item.icon}}"></i>
+            <span>
+                <a href="#">{{item.name}}</a>
+            </span>
+
+        </li> -->
+
+        <li class="nav-list-item " >
+             <i class="fa-solid fa-bars"></i>
+            <span>
+                <a routerLink="dashboard/">dashBoard</a>
+            </span>
+        </li> 
+        <li class="nav-list-item " >
+            <i class="fa-solid fa-house"></i>
+           <span>
+               <a routerLink="home/">home</a>
+           </span>
+       </li> 
+       <li class="nav-list-item " >
+        <i class="fa-solid fa-address-card"></i>
+       <span>
+           <a routerLink="registration/">registration</a>
+       </span>
+   </li> 
+   <li class="nav-list-item " >
+    <i class="fa fa-house"></i>
+   <span>
+       <a routerLink="organization/">organization</a>
+   </span>
+</li> 
+<li class="nav-list-item " >
+    <i class="fa-solid fa-code-branch"></i>
+   <span>
+       <a routerLink="branch/">branch</a>
+   </span>
+</li> 
+<li class="nav-list-item " >
+    <i class="fa-solid fa-users"></i>
+   <span>
+       <a routerLink="user/">user</a>
+   </span>
+</li> 
+
+
+
+    </ul>
+
+</div>

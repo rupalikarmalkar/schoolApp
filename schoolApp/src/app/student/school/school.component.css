@@ -1,0 +1,33 @@
+.abc{
+    margin: 100px;
+
+}
+.outer{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 150px;
+    margin-left: 150px;
+    
+}
+h3{
+    text-align: center;
+    color: rgb(194, 24, 66);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.content{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+button{
+    margin-left: 300px;
+    margin-top: 19px;
+}
+#income{
+    margin-bottom: 10px;
+}
+#division,#sID{
+    margin-bottom: 10px;
+}
+label{
+    color: blue;
+}

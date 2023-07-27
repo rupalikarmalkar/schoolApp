@@ -1,0 +1,38 @@
+
+<div class="main">  <h3>Organization_table </h3>
+    <br/>
+    <div>
+<button type="submit">add</button>
+    </div>
+    <br/>
+<table class="table table-striped mt-2">
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">Organization_ID</th>
+            <th scope="col">Organization_Name</th>
+            <th scope="col">Date_Of_Creation</th>
+            <th scope="col">Organization_Email</th>
+            <th scope="col">Is_Active</th>
+            <th scope="col">Created_By</th>
+            <th scope="col">Created_Date</th>
+            <th scope="col">Update_Date</th>
+            <th scope="col">Branch_ID</th>
+
+
+
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of orgArray">
+            <!-- <td>{{p.Organization_ID}}</td>
+            <td>{{p.EmployeeName}}</td>
+            <td>{{p.StarTimeUtc}}</td>
+            <td>{{p.EndTimeUtc}}</td>
+            <td>{{p.EntryNotes}}</td>
+            <td>{{p.DeletedOn}}</td>
+            -->
+
+        </tr>
+    </tbody>
+</table> 
+</div>

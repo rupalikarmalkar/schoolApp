@@ -1,0 +1,26 @@
+
+
+<div  class="container-fluid g-0">
+  <app-menu (sideNavToggled)="sideNavStatus=$event;"></app-menu>
+
+  <main>
+    <app-side-bar [sideNavStatus]="sideNavStatus"  class="black-border"
+    [ngClass]="{'app-side-bar-open':sideNavStatus}"></app-side-bar>
+    <div class="display-area p-3" [ngClass]="{'display-area-shrink':sideNavStatus}">
+       <p>Wel come To My School ..................</p>
+    </div>
+  </main>
+</div>
+<div class="check">
+
+</div>
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet> 
+
