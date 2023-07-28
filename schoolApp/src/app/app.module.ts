@@ -13,7 +13,7 @@ import { OrganizationComponent } from './components/organization/organization.co
 import { BranchComponent } from './components/branch/branch.component';
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
+// import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserRegistorComponent } from './components/user-registor/user-registor.component';
@@ -33,7 +33,7 @@ import { UserRegistorComponent } from './components/user-registor/user-registor.
     BranchComponent,
     UserComponent,
     LoginComponent,
-    SignupComponent,
+    // SignupComponent,
     UserRegistorComponent,
     
 
