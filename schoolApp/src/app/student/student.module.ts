@@ -9,6 +9,7 @@ import { AdmissionComponent } from './admission/admission.component';
 import { FamilyComponent } from './family/family.component';
 import { SchoolComponent } from './school/school.component';
 import { StudentComponent } from './student/student.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,6 +25,8 @@ import { StudentComponent } from './student/student.component';
   imports: [
     CommonModule,
     StudentRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[]
 

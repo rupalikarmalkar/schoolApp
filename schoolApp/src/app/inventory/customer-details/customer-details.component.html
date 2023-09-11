@@ -1,0 +1,291 @@
+<div class="container" *ngIf="FormHide">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+            <legend style="text-align: center;">quotation Form</legend>
+            <br>
+
+            <form (ngSubmit)="onSubmit(addForm.value)" [formGroup]="addForm">
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="name">name</label>
+                        <input type="string" placeholder="enter last name" name="name" class="form-control"
+                            formControlName="name">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="area">area</label>
+                        <input type="string" class="form-control" placeholder="enter " name="area"
+                            formControlName="area">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="city">city</label>
+                        <input type="text" class="form-control" placeholder="enter " name="city" formControlName="city">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="phoneNo">phoneNo</label>
+                        <input type="text" placeholder="enter Company name" name="phoneNo" class="form-control"
+                            formControlName="phoneNo">
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="balance">balance</label>
+                        <input type="number" placeholder="enter n2" name="balance" class="form-control"
+                            formControlName="balance">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="adress">adress</label>
+                        <input type="text" placeholder="enter Company name" name="adress" class="form-control"
+                            formControlName="adress">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="n1">n1</label>
+                        <input type="number" name="n1" placeholder="enter " class="form-control" formControlName="n1">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="n2">n2</label>
+                        <input type="number" name="n2" placeholder="enter " class="form-control" formControlName="n2">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="t1">t1</label>
+                        <input type="string" name="t1" placeholder="enter " class="form-control" formControlName="t1">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="t2">t2</label>
+                        <input type="string" name="t2" placeholder="enter " class="form-control" formControlName="t2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="disc">disc</label>
+                        <input type="number" name="disc" placeholder="enter " class="form-control"
+                            formControlName="disc">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="gstno">gstno</label>
+                        <input type="number" name="gstno" placeholder="enter " class="form-control"
+                            formControlName="gstno">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="OtherSt">OtherSt</label>
+                        <input type="number" name="OtherSt" placeholder="enter " class="form-control"
+                            formControlName="OtherSt">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="orgId">orgId</label>
+                        <input type="number" name="orgId" placeholder="enter " class="form-control"
+                            formControlName="orgId">
+                        </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="userId">userId</label>
+                        <input type="number" name="userId" placeholder="enter " class="form-control"
+                            formControlName="userId">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="brId"></label>
+                        <input type="number" name="brId" placeholder="enter " class="form-control"
+                            formControlName="brId">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary mt-4" style="margin-left: 290px;">Submit</button>&nbsp;
+            </form>
+        </div>
+    </div>
+</div><br>
+<!-- ---------------------------------------table------------------------------------------- -->
+<div class="main">
+    <br />
+    <div *ngIf="titleHide" style="font-weight: bold;font-size: large;">{{titleName}}
+        <button type="submit" *ngIf="AddBtn" class="btn btn-primary"
+            (click)="toggleAddBtn();titleToggle()">Add+</button>
+    </div>
+    <br />
+    <table class="table table-striped" *ngIf="LogHide">
+
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">cutID</th>
+                <th scope="col">name</th>
+                <th scope="col">area</th>
+                <th scope="col">city</th>
+                <th scope="col">phoneNo</th>
+                <th scope="col">balance</th>
+                <th scope="col">adress</th>
+                <th scope="col">n1</th>
+                <th scope="col">n2</th>
+                <th scope="col">t1</th>
+                <th scope="col">t2</th>
+                <th scope="col">disc</th>
+                <th scope="col">gstno</th>
+                <th scope="col">OtherSt</th>
+               <th scope="col">userId</th>
+                <th scope="col">brId</th>
+                <th scope="col">orgId</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of getAllArray">
+                <td><a class="text-primary" (click)="updateFormToggle();titleToggle();edit(q)"><i
+                            class="fa-solid fa-file-pen fa-lg"></i></a></td>
+                <td><a class="text-danger"><i class="fa-sharp fa-solid fa-trash fa-lg"></i></a></td>
+                <td>{{q.cutID}}</td>
+                <td>{{q.name}}</td>
+                <td>{{q.area}}</td>
+                <td>{{q.city}}</td>
+                <td>{{q.phoneNo}}</td>
+                <td>{{q.balance}}</td>
+                <td>{{q.adress}}</td>
+                <td>{{q.n1}}</td>
+                <td>{{q.n2}}</td>
+                <td>{{q.t1}}</td>
+                <td>{{q.t2}}</td>
+                <td>{{q.disc}}</td>
+                 <td>{{q.gstno}}</td>
+                <td>{{q.OtherSt}}</td>
+				<td>{{q.userId}}</td>
+                <td>{{q.brId}}</td>
+                <td>{{q.orgId}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- -----------------------------------update------------------------------------------------- -->
+    <div class="container" *ngIf="UpdateFormHide">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+                <legend style="text-align: center;">quotation Form</legend>
+                <br>
+    
+                <form (ngSubmit)="update()" [formGroup]="updateForm">
+
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="cutID">cutID</label>
+                            <input type="string" [(ngModel)]="addObject.cutID" placeholder="enter last name" 
+                            name="cutID" class="form-control" formControlName="cutID">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="name">name</label>
+                            <input type="string" [(ngModel)]="addObject.name" placeholder="enter last name" name="name" class="form-control"
+                                formControlName="name">
+                        </div>
+    
+                        <div class="form-group" class="col-md-6">
+                            <label for="area">area</label>
+                            <input type="string"  [(ngModel)]="addObject.area"  class="form-control" placeholder="enter " name="area"
+                                formControlName="area">
+                        </div>
+                    </div>
+                    <div class="row">
+    
+                        <div class="form-group" class="col-md-6">
+                            <label for="city">city</label>
+                            <input type="text" [(ngModel)]="addObject.city" class="form-control" placeholder="enter " name="city" formControlName="city">
+                        </div>
+    
+                        <div class="form-group" class="col-md-6">
+                            <label for="phoneNo">phoneNo</label>
+                            <input type="text"  [(ngModel)]="addObject.phoneNo" placeholder="enter Company name" name="phoneNo" class="form-control"
+                                formControlName="phoneNo">
+    
+                        </div>
+    
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="balance">balance</label>
+                            <input type="number"  [(ngModel)]="addObject.balance" placeholder="enter n2" name="balance" class="form-control"
+                                formControlName="balance">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="adress">adress</label>
+                            <input type="text" [(ngModel)]="addObject.adress"  placeholder="enter Company name" name="adress" class="form-control"
+                                formControlName="adress">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="n1">n1</label>
+                            <input type="number" [(ngModel)]="addObject.n1"  name="n1" placeholder="enter " class="form-control" formControlName="n1">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="n2">n2</label>
+                            <input type="number" [(ngModel)]="addObject.n2"  name="n2" placeholder="enter " class="form-control" formControlName="n2">
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="t1">t1</label>
+                            <input type="string"  [(ngModel)]="addObject.t1"  name="t1" placeholder="enter " class="form-control" formControlName="t1">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="t2">t2</label>
+                            <input type="string"  [(ngModel)]="addObject.t2" name="t2" placeholder="enter " class="form-control" formControlName="t2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="disc">disc</label>
+                            <input type="number" [(ngModel)]="addObject.disc" name="disc" placeholder="enter " class="form-control"
+                                formControlName="disc">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="gstno">gstno</label>
+                            <input type="number"   [(ngModel)]="addObject.gstno" name="gstno" placeholder="enter " class="form-control"
+                                formControlName="gstno">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="OtherSt">OtherSt</label>
+                            <input type="number"  [(ngModel)]="addObject.OtherSt" name="OtherSt" placeholder="enter " class="form-control"
+                                formControlName="OtherSt">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="orgId">orgId</label>
+                            <input type="number"  [(ngModel)]="addObject.orgId" name="orgId" placeholder="enter " class="form-control"
+                                formControlName="orgId">
+                            </div>
+    
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="userId">userId</label>
+                            <input type="number" [(ngModel)]="addObject.userId" name="userId" placeholder="enter " class="form-control"
+                                formControlName="userId">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="brId"></label>
+                            <input type="number"  [(ngModel)]="addObject.brId" name="brId" placeholder="enter " class="form-control"
+                                formControlName="brId">
+                        </div>
+                    </div>
+    
+                    <button class="btn btn-primary mt-4" style="margin-left: 290px;">Submit</button>&nbsp;
+                </form>
+            </div>
+        </div>
+    </div><br>

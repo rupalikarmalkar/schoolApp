@@ -1,11 +1,8 @@
-<!-- <p>user-registor works!</p> -->
-
-
-
-
+<div class="boby">
+  <!-- <img src="../../assets/s1.jpeg"> -->
 <div class="container mt-4" >
     <div class="card">
-        <h1>Employee Registation</h1>
+        <h1>Student Registration</h1>
   <form>
     <div class="form-group">
       <label>Name</label>
@@ -23,9 +20,10 @@
         <label>Paaword</label>
         <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"
          class="form-control" id="password" class="form-control" placeholder="Enter Password">
-      </div>
+      </div><br>
      <button type="submit" class="btn btn-primary" (click)="save()">Register</button>
   </form>
   </div>
   </div>
+</div>
   <router-outlet></router-outlet>

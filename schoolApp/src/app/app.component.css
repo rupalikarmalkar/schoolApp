@@ -26,48 +26,14 @@ app-side-bar{
 }
 .display-area{
     position: absolute;
-    left: 250px;
-    width: calc(100% - 250px);
+    left: 180px;
+    width: calc(100% - 180px);
     transition: left 250 ease-in, width 250ms ease-in;
 }
 .app-side-bar-open{
-    width: 250px;
+    width: 180px;
 }
 .display-area-shrink{
-    width:calc(100% - 250px);
-    left: 250px;
+    width:calc(100% - 180px);
+    left: 180px;
 }
-/* .check{
-    height: 900px;
-    width: 100%;
-    /* background-color: rgb(197, 184, 159); */
-/* }
-p{
-    font-style: italic;
-    font-family:sans-serif;
-    font-weight:bolder;
-} */ 
-
-/* old coding */
-
-/* img{
-    height: 50px;
-}
-
-#home{
-    margin-left: 80px;
-}
-span{
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(118, 6, 6);
-    font-weight: 400px;
-     */
-
-/* header{
-    position: fixed;
-    width: 100%;
-    top:0px;
-    height: 4rem;
-    z-index: 2;
-} */
-

@@ -1,4 +1,13 @@
-<div class="abc"> 
+<div class="row no-gutters">  
+
+  <div class="col no-gutters">
+    <div class="leftside">
+      <img src="../../assets/s1.jpeg">
+    </div>
+  </div>
+
+<div class="col no-gutters">
+<div class="rightside"> 
 <div class="container mt-4" >
   <div class="card">
       <h1>Student Login</h1>
@@ -9,15 +18,20 @@
       class="form-control" id="email"  placeholder="Enter Email">
     </div>
     <div class="form-group">
-      <label>Paaword</label>
+      <label>Password</label>
       <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" 
       class="form-control" id="password" class="form-control" placeholder="Enter Password">
-    </div>
+    </div><br>
    <button type="submit" class="btn btn-primary" (click)="Login()">Login</button>
 </form>
 </div>
 </div>
 </div>
+</div>
+</div>
+
+
+
 <router-outlet></router-outlet>
 
 <!-- 

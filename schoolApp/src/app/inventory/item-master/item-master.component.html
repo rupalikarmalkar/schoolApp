@@ -1,0 +1,344 @@
+    <div class="container" *ngIf="itemFormHide">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+            <legend style="text-align: center;">ItemMaster Form</legend>
+            <br>
+                  
+                <form (ngSubmit)="onSubmit(itemForm.value)" [formGroup]="itemForm">
+                   <div class="row"> 
+                   <div class="form-group"  class="col-md-6" >
+                    <label for="itemCode">itemCode</label>
+                    <input type="text" placeholder="enter last name" name="itemCode" class="form-control"
+                        formControlName="itemCode">
+                    </div>
+
+                <div class="form-group"  class="col-md-6">
+                    <label for="name">name</label>
+                    <input type="name" class="form-control" placeholder="enter name" name="name"
+                        formControlName="name">
+                    </div>
+                </div>
+                <div class="row"> 
+
+                <div class="form-group" class="col-md-6">
+                    <label for="unit">unit</label>
+                    <input type="text" class="form-control" placeholder="enter phone number" name="unit"
+                        formControlName="unit">
+                    </div>
+
+                <div class="form-group" class="col-md-6">
+                    <label for="quantity">quantity</label>
+                    <input type="text" placeholder="enter quantity" name="quantity" 
+                    class="form-control"
+                        formControlName="quantity">
+                     </div>
+                </div>
+                <div class="row">
+                <div class="form-group" class="col-md-6">
+                    <label for="rate">rate</label>
+                    <input type="text" placeholder="enter Company name" name="rate" class="form-control"
+                        formControlName="rate">
+                    
+                </div>
+                <div class="form-group" class="col-md-6">
+                    <label for="d1">d1</label>
+                    <input type="number" placeholder="enter Company name" name="d1" class="form-control"
+                        formControlName="d1">
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="d2">d2</label>
+                    <input type="number" name="d2" placeholder="enter " class="form-control"
+                        formControlName="d2">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="itmType">itmType</label>
+                    <input type="text" name="itmType" placeholder="enter " class="form-control"
+                        formControlName="itmType">
+                   </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="shrtnm">shrtnm</label>
+                    <input type="text" name="shrtnm" placeholder="enter password" class="form-control"
+                        formControlName="shrtnm">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="cgst">cgst</label>
+                    <input type="number" name="cgst" placeholder="enter " class="form-control"
+                        formControlName="cgst">
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="sgst">sgst</label>
+                    <input type="number" name="sgst" placeholder="enter " class="form-control"
+                        formControlName="sgst">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="igst">igst</label>
+                    <input type="text" name="igst" placeholder="enter " class="form-control"
+                        formControlName="igst">
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="pRate">pRate</label>
+                    <input type="number" name="pRate" placeholder="enter password" class="form-control"
+                        formControlName="pRate">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="hsncode">hsncode</label>
+                    <input type="number" name="hsncode" placeholder="enter " class="form-control"
+                        formControlName="hsncode">
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="category">category</label>
+                    <input type="text" name="category" placeholder="enter " class="form-control"
+                        formControlName="category">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="categoryID">categoryID</label>
+                    <input type="number" name="categoryID" placeholder="enter " class="form-control"
+                        formControlName="categoryID">
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="wrates">wrates</label>
+                    <input type="number" name="wrates" placeholder="enter " class="form-control"
+                        formControlName="wrates">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="userId">userId</label>
+                    <input type="number" name="userId" placeholder="enter " class="form-control"
+                        formControlName="userId">
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="brId">brId</label>
+                    <input type="number" name="brId" placeholder="enter " class="form-control"
+                        formControlName="brId">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="orgId">orgId</label>
+                    <input type="number" name="orgId" placeholder="enter " class="form-control"
+                        formControlName="orgId">
+                   </div>
+                </div>
+                
+                   <button class="btn btn-primary mt-4" style="margin-left: 290px;" >Submit</button>&nbsp;
+            </form>
+        </div>
+    </div> 
+</div><br>
+<!-- ----------Table----------------------------------------------- -->
+
+<div class="main"> <h3 *ngIf="titleHide"> </h3>
+    <br/>
+    <div *ngIf="titleHide" style="font-weight: bold;font-size: large;">{{titleName}}
+        <button type="submit"  *ngIf="itemAddBtn" class="btn btn-primary" (click)="toggleAddBtn();titleToggle()">Add+</button>
+    </div>
+    <br/>
+<table class="table table-striped"  *ngIf="itemLogHide">
+
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">itemCode</th>
+            <th scope="col">name</th>
+            <th scope="col">unit</th>
+            <th scope="col">quantity</th>
+            <th scope="col">rate</th>
+            <th scope="col">d1</th>
+            <th scope="col">d2</th>
+            <th scope="col">itmType</th>
+            <th scope="col">shrtnm</th>
+            <th scope="col">cgst</th>
+			 <th scope="col">sgst</th>
+            <th scope="col">igst</th>
+            <th scope="col">pRate</th>
+            <th scope="col">hsncode</th>
+            <th scope="col">category</th>
+            <th scope="col">categoryID</th>
+            <th scope="col">wrates</th>
+            <th scope="col">userId</th>
+            <th scope="col">brId</th>
+            <th scope="col">orgId</th>
+        </tr>
+	</thead>
+    <tbody>
+        <tr *ngFor="let p of getItemArray">
+            <td><a class="text-primary" (click)="updateFormToggle();titleToggle();onEdit(p)"><i class="fa-solid fa-file-pen fa-lg"></i></a></td>
+            <td ><a class="text-danger" ><i class="fa-sharp fa-solid fa-trash fa-lg"></i></a></td>
+            <!-- (click)="deleteItem(p.itemCode)" -->
+            <td>{{p.itemCode}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.unit}}</td> 
+			<td>{{p.quantity}}</td>
+            <td>{{p.rate}}</td>
+            <td>{{p.d1}}</td>
+            <td>{{p.d2}}</td>
+           <td>{{p.itmType}}</td>
+            <td>{{p.shrtnm}}</td>
+			<td>{{p.cgst}}</td>
+            <td>{{p.sgst}}</td>
+            <td>{{p.igst}}</td>
+            <td>{{p.pRate}}</td>
+            <td>{{p.hsncode}}</td>
+            <td>{{p.category}}</td>
+            <td>{{p.categoryID}}</td>
+            <td>{{p.wrates}}</td>
+			<td>{{p.userId}}</td>
+            <td>{{p.brId}}</td>
+            <td>{{p.orgId}}</td>
+          </tr>
+    </tbody>
+</table> 
+	<!-- --------------------------update Form -->
+  
+<div class="container"  *ngIf="itemUpdateFormHide">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+                <legend style="text-align: center;">Update Form</legend>
+                <br>
+                      <form  (ngSubmit)="updateItem(updateItemForm.value)" [formGroup]="updateItemForm">
+                    <div class="row"> 
+                       <!-- <div class="form-group"  class="col-md-6" >
+                        <label for="itemCode">itemCode</label>
+                        <input type="text" [(ngModel)]="editObj.itemCode"   placeholder="enter last name" name="itemCode" class="form-control"
+                            formControlName="itemCode">
+                        </div> -->
+    
+                    <div class="form-group"  class="col-md-6">
+                        <label for="name">name</label>
+                        <input type="text" class="form-control" placeholder="enter name" name="name"
+                            formControlName="name">
+                        </div>
+                    </div>
+                    <div class="row"> 
+    
+                    <div class="form-group" class="col-md-6">
+                        <label for="unit">unit</label>
+                        <input type="text"  class="form-control" placeholder="enter phone number" name="unit"
+                            formControlName="unit">
+                        </div>
+    
+                    <div class="form-group" class="col-md-6">
+                        <label for="quantity">quantity</label>
+                        <input type="text"   placeholder="enter quantity" name="quantity" 
+                        class="form-control"
+                            formControlName="quantity">
+                         </div>
+                    </div>
+                    <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="rate">rate</label>
+                        <input type="text"   placeholder="enter Company name" name="rate" class="form-control"
+                            formControlName="rate">
+                        
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="d1">d1</label>
+                        <input type="number"  placeholder="enter Company name" name="d1" class="form-control"
+                            formControlName="d1">
+                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                        <label for="d2">d2</label>
+                        <input type="number"  name="d2" placeholder="enter " class="form-control"
+                            formControlName="d2">
+                       </div>
+                       <div class="form-group" class="col-md-6">
+                        <label for="itmType">itmType</label>
+                        <input type="text"  name="itmType" placeholder="enter " class="form-control"
+                            formControlName="itmType">
+                       </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                        <label for="shrtnm">shrtnm</label>
+                        <input type="text"  name="shrtnm" placeholder="enter password" class="form-control"
+                            formControlName="shrtnm">
+                       </div>
+                       <div class="form-group" class="col-md-6">
+                        <label for="cgst">cgst</label>
+                        <input type="number"  name="cgst" placeholder="enter " class="form-control"
+                            formControlName="cgst">
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                        <label for="sgst">sgst</label>
+                        <input type="number" name="sgst" placeholder="enter " class="form-control"
+                            formControlName="sgst">
+                       </div>
+                       <div class="form-group" class="col-md-6">
+                        <label for="igst">igst</label>
+                        <input type="text"   name="igst" placeholder="enter " class="form-control"
+                            formControlName="igst">
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                        <label for="pRate">pRate</label>
+                        <input type="number" name="pRate" placeholder="enter password" class="form-control"
+                            formControlName="pRate">
+                       </div>
+                       <div class="form-group" class="col-md-6">
+                        <label for="hsncode">hsncode</label>
+                        <input type="number" name="hsncode" placeholder="enter " class="form-control"
+                            formControlName="hsncode">
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                        <label for="category">category</label>
+                        <input type="text"  name="category" placeholder="enter " class="form-control"
+                            formControlName="category">
+                       </div>
+                       <div class="form-group" class="col-md-6">
+                        <label for="categoryID">categoryID</label>
+                        <input type="number"  name="categoryID" placeholder="enter " class="form-control"
+                            formControlName="categoryID">
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                        <label for="wrates">wrates</label>
+                        <input type="number" name="wrates" placeholder="enter " class="form-control"
+                            formControlName="wrates">
+                       </div>
+                       <div class="form-group" class="col-md-6">
+                        <label for="userId">userId</label>
+                        <input type="number" name="userId" placeholder="enter " class="form-control"
+                            formControlName="userId">
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                        <label for="brId">brId</label>
+                        <input type="number" name="brId" placeholder="enter " class="form-control"
+                            formControlName="brId">
+                       </div>
+                       <div class="form-group" class="col-md-6">
+                        <label for="orgId">orgId</label>
+                        <input type="number"  name="orgId" placeholder="enter " class="form-control"
+                            formControlName="orgId">
+                       </div>
+                    </div>
+            <button class="btn btn-primary mt-4" style="margin-left: 290px;" >Update</button>&nbsp;
+                </form>
+            </div>
+        </div> 
+    </div><br>

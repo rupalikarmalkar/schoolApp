@@ -1,40 +1,193 @@
 
-<div class="main">  <h3>Organization_table </h3>
+<div class="container" *ngIf="orgFormHide">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+            <!-- <div class="main">  -->
+
+            <legend style="text-align: center;">Organization Register</legend>
+            <br>
+          
+
+                 <form (ngSubmit)="onSubmit(organizationForm.value)" [formGroup]="organizationForm">
+                   <div class="row"> 
+                   <div class="form-group"  class="col-md-6" >
+                    <label for="organizationName">organizationName</label>
+                    <input type="text" placeholder="enter last name" name="organizationName" class="form-control"
+                        formControlName="organizationName">
+                    </div>
+
+                <div class="form-group"  class="col-md-6">
+                    <label for="organizationEmail">Email</label>
+                    <input type="email" class="form-control" placeholder="enter email" name="organizationEmail"
+                        formControlName="organizationEmail">
+                    </div>
+                </div>
+                <div class="row"> 
+
+                <div class="form-group" class="col-md-6">
+                    <label for="isActive">isActive</label>
+                    <input type="text" class="form-control" placeholder="enter phone number" name="isActive"
+                        formControlName="isActive">
+                    </div>
+
+                <div class="form-group" class="col-md-6">
+                    <label for="createdBy">createdBy</label>
+                    <input type="text" placeholder="enter Company name" name="createdBy" class="form-control"
+                        formControlName="createdBy">
+                     </div>
+                </div>
+                <div class="row">
+                <div class="form-group" class="col-md-6">
+                    <label for="createdDate">createdDate</label>
+                    <input type="date" placeholder="enter Company name" name="createdDate" class="form-control"
+                        formControlName="createdDate">
+                    
+                </div>
+                <div class="form-group" class="col-md-6">
+                    <label for="updateDate">updateDate</label>
+                    <input type="date" placeholder="enter Company name" name="updateDate" class="form-control"
+                        formControlName="updateDate">
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="branchID">branchID</label>
+                    <input type="number" name="branchID" placeholder="enter password" class="form-control"
+                        formControlName="branchID">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="userID">userID</label>
+                    <input type="number" name="userID" placeholder="enter password" class="form-control"
+                        formControlName="userID">
+                   </div>
+                </div>
+                   <button class="btn btn-primary mt-4" style="margin-left: 290px;" >Submit</button>&nbsp;
+            </form>
+        </div>
+    </div> 
+<!-- </div> -->
+</div><br>
+
+<!-- ------------------------------------Table------------------------------------------- -->
+<div class="main">  <h3 *ngIf="titleHide">Organization_table </h3>
     <br/>
-    <div>
-<button type="submit">add</button>
+    <div *ngIf="titleHide" style="font-weight: bold;font-size: large;">{{titleName}}
+        <button type="submit"  *ngIf="orgAddBtn" class="btn btn-primary" (click)="toggleAddBtn();titleToggle()">Add+</button>
     </div>
     <br/>
-<table class="table table-striped mt-2">
+  <!-- <div class="mb-3">
+        <label for="search" class="form-label">Search</label>
+        <input type="text" class="form-control" 
+        id="search"  placeholder="search Organization by Name" [(ngModel)]="searchName">
+      </div>  -->
+   
+<table class="table table-striped mt-2" *ngIf="orgLogHide">
     <thead>
         <tr class="table-primary">
-            <th scope="col">Organization_ID</th>
-            <th scope="col">Organization_Name</th>
-            <!-- <th scope="col">Date_Of_Creation</th> -->
-            <th scope="col">Organization_Email</th>
-            <th scope="col">Is_Active</th>
-            <th scope="col">Created_By</th>
-            <th scope="col">Created_Date</th>
-            <th scope="col">Update_Date</th>
-            <th scope="col">Branch_ID</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">OrganizationID</th>
+            <th scope="col">BranchID</th>
+            <th scope="col">userID</th>
 
+            <th scope="col">OrganizationName</th>
+            <th scope="col">OrganizationEmail</th>
+            <th scope="col">IsActive</th>
+            <th scope="col">CreatedBy</th>
+            <th scope="col">CreatedDate</th>
+            <th scope="col">UpdateDate</th>
+           
 
-
-          </tr>
+     </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let p of post">
-            <td>{{p.organization_ID}}</td>
-            <td>{{p.organization_Name}}</td>
-            <td>{{p.organization_Email}}</td>
-            <td>{{p.is_Active}}</td>
-            <td>{{p.created_By}}</td>
-           <td>{{p.created_Date}}</td>
-            <td>{{p.update_Date}}</td>
-            <td>{{p.branch_Id}}</td>
-
-           
+        <tr *ngFor="let p of getOrgArray | filtterOrg:searchName ">
+            <td><a class="text-primary"  (click)="updateFormToggle();onEdit(p)"><i class="fa-solid fa-file-pen fa-lg"></i></a></td>
+            <td ><a class="text-danger" (click)="deleteOrganizationRecord(p)"><i class="fa-sharp fa-solid fa-trash fa-lg"></i></a></td>
+            <td>{{p.organizationID}}</td>
+            <td>{{p.branchID}}</td>
+            <td>{{p.userID}}</td>
+           <td>{{p.organizationName}}</td>
+            <td>{{p.organizationEmail}}</td>
+            <td>{{p.isActive}}</td>
+            <td>{{p.createdBy}}</td>
+           <td>{{p.createdDate}}</td>
+            <td>{{p.updateDate}}</td>
+             
         </tr>
     </tbody>
 </table> 
 </div>
+<!-- ---------------------------------------update Form----------------------------------- -->
+
+
+
+<div class="container" *ngIf="orgUpdateFormHide">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+            <!-- <div class="main">  -->
+
+            <legend style="text-align: center;">Organization Update</legend>
+            <br>
+
+                  <form    (ngSubmit)="UpdateOrganizationDetails(organizationUpdateForm.value)" [formGroup]="organizationUpdateForm">
+                    
+                    <div>
+
+                   <div class="row"> 
+                   <div class="form-group"  class="col-md-6" >
+                    <label for="organizationName">organizationName</label>
+                    <input type="text" placeholder="enter last name"   name="organizationName" class="form-control"
+                        formControlName="organizationName">
+                    </div>
+
+                <div class="form-group"  class="col-md-6">
+                    <label for="organizationEmail">Email</label>
+                    <input type="email" class="form-control" placeholder="enter email" name="organizationEmail"
+                        formControlName="organizationEmail">
+                    </div>
+                </div>
+                <div class="row"> 
+
+                <div class="form-group" class="col-md-6">
+                    <label for="isActive">isActive</label>
+                    <input type="text" class="form-control" placeholder="enter phone number" name="isActive"
+                        formControlName="isActive">
+                    </div>
+
+                <div class="form-group" class="col-md-6">
+                    <label for="createdBy">createdBy</label>
+                    <input type="text" placeholder="enter Company name" name="createdBy" class="form-control"
+                        formControlName="createdBy">
+                     </div>
+                </div>
+                <div class="row">
+                <div class="form-group" class="col-md-6">
+                    <label for="createdDate">created_Date</label>
+                    <input type="date" placeholder="enter Company name" name="createdDate" class="form-control"
+                        formControlName="createdDate">
+                    
+                </div>
+                <div class="form-group" class="col-md-6">
+                    <label for="updateDate">updateDate</label>
+                    <input type="date" placeholder="enter Company name" name="updateDate" class="form-control"
+                        formControlName="updateDate">
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                    <label for="branchID">branchID</label>
+                    <input type="number" name="branchID" placeholder="enter password" class="form-control"
+                        formControlName="branchID">
+                   </div>
+                   <div class="form-group" class="col-md-6">
+                    <label for="userID">userID</label>
+                    <input type="number" name="userID" placeholder="enter password" class="form-control"
+                        formControlName="userID">
+                   </div>
+                </div>
+                   <button class="btn btn-primary mt-4" style="margin-left: 290px;">Update</button>&nbsp;
+                </div>
+            </form>
+        </div>
+    </div> 

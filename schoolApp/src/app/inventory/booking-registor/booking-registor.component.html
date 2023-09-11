@@ -1,0 +1,334 @@
+<div class="container" *ngIf="FormHide">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+            <legend style="text-align: center;">quotation Form</legend>
+            <br>
+
+            <form (ngSubmit)="onSubmit(addForm.value)" [formGroup]="addForm">
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="name">name</label>
+                        <input type="text" placeholder="enter last name" name="name" class="form-control"
+                            formControlName="name">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="addres">addres</label>
+                        <input type="text" class="form-control" placeholder="enter " name="addres"
+                            formControlName="addres">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="mNo">mNo</label>
+                        <input type="text" class="form-control" placeholder="enter " 
+                        name="mNo" formControlName="mNo">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="Item_code">Item_code</label>
+                        <input type="number" placeholder="enter quantity" name="Item_code" class="form-control"
+                            formControlName="Item_code">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="itemName">itemName</label>
+                        <input type="text" placeholder="enter Company name" name="itemName" class="form-control"
+                            formControlName="itemName">
+
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="quantity">quantity</label>
+                        <input type="number" name="quantity" placeholder="enter " class="form-control"
+                            formControlName="quantity">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="iRate">iRate</label>
+                        <input type="number" name="iRate" placeholder="enter " class="form-control"
+                            formControlName="iRate">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="rAmount">rAmount</label>
+                        <input type="number" name="rAmount" placeholder="enter " class="form-control"
+                            formControlName="rAmount">
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="pAmount">pAmount</label>
+                        <input type="number" name="pAmount" placeholder="enter " class="form-control"
+                            formControlName="pAmount">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="total">total</label>
+                        <input type="number" name="total" placeholder="enter " class="form-control"
+                            formControlName="total">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="total">total</label>
+                        <input type="number" name="total" placeholder="enter " class="form-control"
+                            formControlName="total">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="bDate">bDate</label>
+                        <input type="number" name="bDate" placeholder="enter " class="form-control"
+                            formControlName="bDate">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="dDate">dDate</label>
+                        <input type="number" name="dDate" placeholder="enter " class="form-control"
+                            formControlName="dDate">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="dTime">dTime</label>
+                        <input type="number" name="dTime" placeholder="enter " class="form-control"
+                            formControlName="dTime">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="itemDetails">itemDetails</label>
+                        <input type="number" class="form-control" placeholder="enter phone number" name="itemDetails"
+                            formControlName="itemDetails">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="userId">userId</label>
+                        <input type="number" name="userId" placeholder="enter " class="form-control"
+                            formControlName="userId">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="brid">brid</label>
+                        <input type="number" name="brid" placeholder="enter " class="form-control"
+                            formControlName="brid">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="orgId">orgId</label>
+                        <input type="number" name="orgId" placeholder="enter " class="form-control"
+                            formControlName="orgId">
+                    </div>
+
+                </div>
+                <button class="btn btn-primary mt-4" style="margin-left: 290px;">Submit</button>&nbsp;
+            </form>
+        </div>
+    </div>
+</div><br>
+<!-- ---------------------------------table---------------------------- -->
+
+
+<!-- ---------------------------------------table------------------------------------------- -->
+<div class="main">
+    <br />
+    <div *ngIf="titleHide" style="font-weight: bold;font-size: large;">{{titleName}}
+        <button type="submit" *ngIf="AddBtn" class="btn btn-primary"
+            (click)="toggleAddBtn();titleToggle()">Add+</button>
+    </div>
+    <br />
+    <table class="table table-striped" *ngIf="LogHide">
+
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">custNo</th>
+                <th scope="col">name</th>
+                <th scope="col">addres</th>
+                <th scope="col">mNo</th>
+                <th scope="col">Item_code</th>
+                <th scope="col">itemName</th>
+                <th scope="col">quantity</th>
+                <th scope="col">iRate</th>
+                <th scope="col">rAmount</th>
+                <th scope="col">pAmount</th>
+                <th scope="col">total</th>
+                <th scope="col">bDate</th>
+                <th scope="col">dDate</th>
+                <th scope="col">dTime</th>
+                <th scope="col">itemDetails</th>
+                <th scope="col">userId</th>
+                <th scope="col">brId</th>
+                <th scope="col">orgId</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of getAllArray">
+                <td><a class="text-primary" (click)="updateFormToggle();titleToggle();edit(q)"><i
+                            class="fa-solid fa-file-pen fa-lg"></i></a></td>
+                <td><a class="text-danger"><i class="fa-sharp fa-solid fa-trash fa-lg"></i></a></td>
+                <td>{{q.custNo}}</td>
+                <td>{{q.name}}</td>
+                <td>{{q.addres}}</td>
+                <td>{{q.mNo}}</td>
+                <td>{{q.Item_code}}</td>
+                <td>{{q.itemName}}</td>
+                <td>{{q.quantity}}</td>
+                <td>{{q.iRate}}</td>
+                <td>{{q.pAmount}}</td>
+                <td>{{q.rAmount}}</td>
+                <td>{{q.total}}</td>
+                <td>{{q.bDate}}</td>
+                <td>{{q.dDate}}</td>
+                <td>{{q.dTime}}</td>
+                <td>{{q.itemDetails}}</td>
+                <td>{{q.userId}}</td>
+                <td>{{q.brId}}</td>
+                <td>{{q.orgId}}</td>
+            </tr>
+        </tbody>
+    </table>
+<!-- ------------------------------------------update-------------------------------------- -->
+
+<div class="container" *ngIf="UpdateFormHide">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+            <legend style="text-align: center;">quotation Form</legend>
+            <br>
+
+            <form (ngSubmit)="update()" [formGroup]="updateForm">
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="name">name</label>
+                        <input type="text" [(ngModel)]="addObject.name" placeholder="enter last name" name="name"
+                            class="form-control" formControlName="name">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="addres">addres</label>
+                        <input type="text" [(ngModel)]="addObject.addres" class="form-control" placeholder="enter "
+                            name="addres" formControlName="addres">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="mNo">mNo</label>
+                        <input type="text" [(ngModel)]="addObject.mNo" class="form-control" placeholder="enter "
+                            name="mNo" formControlName="mNo">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="Item_code">Item_code</label>
+                        <input type="number" [(ngModel)]="addObject.Item_code" placeholder="enter quantity"
+                            name="Item_code" class="form-control" formControlName="Item_code">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="itemName">itemName</label>
+                        <input type="text" [(ngModel)]="addObject.itemName" placeholder="enter Company name"
+                            name="itemName" class="form-control" formControlName="itemName">
+
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="quantity">quantity</label>
+                        <input type="number" [(ngModel)]="addObject.quantity" name="quantity" placeholder="enter "
+                            class="form-control" formControlName="quantity">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="iRate">iRate</label>
+                        <input type="number" [(ngModel)]="addObject.iRate" name="iRate" placeholder="enter "
+                            class="form-control" formControlName="iRate">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="rAmount">rAmount</label>
+                        <input type="number" [(ngModel)]="addObject.rAmount" name="rAmount" placeholder="enter "
+                            class="form-control" formControlName="rAmount">
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="pAmount">pAmount</label>
+                        <input type="number" [(ngModel)]="addObject.pAmount" name="pAmount" placeholder="enter "
+                            class="form-control" formControlName="pAmount">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="total">total</label>
+                        <input type="number" [(ngModel)]="addObject.total" name="total" placeholder="enter "
+                            class="form-control" formControlName="total">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="total">total</label>
+                        <input type="number" [(ngModel)]="addObject.total" name="total" placeholder="enter "
+                            class="form-control" formControlName="total">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="bDate">bDate</label>
+                        <input type="number" [(ngModel)]="addObject.bDate" name="bDate" placeholder="enter "
+                            class="form-control" formControlName="bDate">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="dDate">dDate</label>
+                        <input type="number" [(ngModel)]="addObject.dDate" name="dDate" placeholder="enter "
+                            class="form-control" formControlName="dDate">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="dTime">dTime</label>
+                        <input type="number" [(ngModel)]="addObject.dTime" name="dTime" placeholder="enter "
+                            class="form-control" formControlName="dTime">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="itemDetails">itemDetails</label>
+                        <input type="number" [(ngModel)]="addObject.itemDetails" class="form-control"
+                            placeholder="enter phone number" name="itemDetails" formControlName="itemDetails">
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="userId">userId</label>
+                        <input type="number" [(ngModel)]="addObject.userId" name="userId" placeholder="enter "
+                            class="form-control" formControlName="userId">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="brid">brid</label>
+                        <input type="number" [(ngModel)]="addObject.brid" name="brId" placeholder="enter "
+                            class="form-control" formControlName="brid">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="orgId">orgId</label>
+                        <input type="number" [(ngModel)]="addObject.orgId" name="orgId" placeholder="enter "
+                            class="form-control" formControlName="orgId">
+                    </div>
+
+                </div>
+                <button class="btn btn-primary mt-4" style="margin-left: 290px;">Update</button>&nbsp;
+            </form>
+        </div>
+    </div>
+</div><br>

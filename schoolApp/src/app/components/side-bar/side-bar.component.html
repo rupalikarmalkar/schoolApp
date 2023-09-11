@@ -28,9 +28,9 @@
        </span>
    </li> 
    <li class="nav-list-item " >
-    <i class="fa fa-house"></i>
-   <span>
-       <a routerLink="organization/">organization</a>
+    <i class="fa-solid fa-sitemap fa-xl"></i>
+    <span>
+<a routerLink="organization/">organization</a>
    </span>
 </li> 
 <li class="nav-list-item " >
@@ -46,8 +46,27 @@
    </span>
 </li> 
 
+<li class="nav-list-item">
+    <!-- <i class="fa-solid fa-shelves fa-lg"></i> -->
+    <i class="fa-solid fa-sitemap fa-xl"></i>
+   <span>
 
+    <li class="nav-item dropdown">
+        <a   class="nav-link dropdown-toggle" routerLink="inventory/" role="button" 
+        data-bs-toggle="dropdown">Inventory</a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" routerLink="item-master/">ItemMaster</a></li>
+            <li><a class="dropdown-item" routerLink="booking-registor/">Bookingregistor</a></li>
+            <li><a class="dropdown-item" routerLink="customer-details/"> customerDetails</a></li>
+            <li><a class="dropdown-item" routerLink="transaction-details/">transactionDetails</a></li>
+            <li><a class="dropdown-item" routerLink="quotation-master/">quotation-master</a></li>
+            <li><a class="dropdown-item" routerLink="sales-master/">sales-master</a></li>
+            <li><a class="dropdown-item" routerLink="sales-transaction/">sales-transaction</a></li>
 
-    </ul>
-
+          </ul>
+         </li>
+<!-- <a routerLink="inventory/">Inventory</a> -->
+       </span>
+    </li> 
+ </ul>
 </div>

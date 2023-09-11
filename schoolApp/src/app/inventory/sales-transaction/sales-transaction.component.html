@@ -1,0 +1,167 @@
+<div class="container" *ngIf="FormHide">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+            <legend style="text-align: center;">quotation Form</legend>
+            <br>
+
+            <form (ngSubmit)="onSubmit(addForm.value)" [formGroup]="addForm">
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="invoiceId">invoiceId</label>
+                        <input type="number"   placeholder="enter last name" name="invoiceId" class="form-control"
+                            formControlName="invoiceId">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="invoiceDate">invoiceDate</label>
+                        <input type="date" placeholder="enter last name" name="invoiceDate" class="form-control"
+                            formControlName="invoiceDate">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="cousterCode">cousterCode</label>
+                        <input type="number" class="form-control" placeholder="enter " name="cousterCode"
+                            formControlName="cousterCode">
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="total">total</label>
+                        <input type="number" class="form-control" placeholder="enter " name="total"
+                            formControlName="total">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="userId">userId</label>
+                        <input type="number" name="userId" placeholder="enter " class="form-control"
+                            formControlName="userId">
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="brId">brId</label>
+                        <input type="number" name="brId" placeholder="enter " class="form-control"
+                            formControlName="brId">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="orgId">orgId</label>
+                        <input type="number" name="orgId" placeholder="enter " class="form-control"
+                            formControlName="orgId">
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-4" style="margin-left: 290px;">Submit</button>&nbsp;
+            </form>
+        </div>
+    </div>
+</div><br>
+
+
+<!-- --------------------------------------------------Table------------------------------------------------- -->
+<div class="main">
+    <br />
+    <div *ngIf="titleHide" style="font-weight: bold;font-size: large;">{{titleName}}
+        <button type="submit" *ngIf="AddBtn" class="btn btn-primary"
+            (click)="toggleAddBtn();titleToggle()">Add+</button>
+    </div>
+    <br />
+    <table class="table table-striped" *ngIf="LogHide">
+
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Edit</th>
+                <th scope="col">delete</th>
+                <th scope="col">invoiceId</th>
+                <th scope="col">invoiceDate</th>
+                <th scope="col">cousterCode</th>
+                <th scope="col">total</th>
+                <th scope="col">userId</th>
+                <th scope="col">brId</th>
+                <th scope="col">orgId</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of getAllArray">
+                <td><a class="text-primary" (click)="updateFormToggle();titleToggle();edit(q)"><i class="fa-solid fa-file-pen fa-lg"></i></a></td>
+                <td><a class="text-danger"><i class="fa-sharp fa-solid fa-trash fa-lg"></i></a></td>
+                <td>{{q.invoiceId}}</td>
+                <td>{{q.invoiceDate}}</td>
+                <td>{{q.cousterCode}}</td>
+                <td>{{q.total}}</td>
+                <td>{{q.userId}}</td>
+                <td>{{q.brId}}</td>
+                <td>{{q.orgId}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- ----------------------------------------Update Form------------------------------------------- -->
+    <div class="container" *ngIf="UpdateFormHide">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+                <legend style="text-align: center;">quotation Form</legend>
+                <br>
+
+                <form (ngSubmit)="update()" [formGroup]="updateForm">
+
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="invoiceId">invoiceId</label>
+                            <input type="number" [(ngModel)]="addObject.invoiceId"  placeholder="enter last name" name="invoiceId" class="form-control"
+                                formControlName="invoiceId">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="invoiceDate">invoiceDate</label>
+                            <input type="date" [(ngModel)]="addObject.invoiceDate"  placeholder="enter last name" name="invoiceDate" class="form-control"
+                                formControlName="invoiceDate">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="cousterCode">cousterCode</label>
+                            <input type="number" [(ngModel)]="addObject.cousterCode" class="form-control" placeholder="enter " name="cousterCode"
+                                formControlName="cousterCode">
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="form-group" class="col-md-6">
+                            <label for="total">total</label>
+                            <input type="number"  [(ngModel)]="addObject.total" class="form-control" placeholder="enter " name="total"
+                                formControlName="total">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="userId">userId</label>
+                            <input type="number"  [(ngModel)]="addObject.userId" name="userId" placeholder="enter " class="form-control"
+                                formControlName="userId">
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="form-group" class="col-md-6">
+                            <label for="brId">brId</label>
+                            <input type="number" [(ngModel)]="addObject.brId" name="brId" placeholder="enter " class="form-control"
+                                formControlName="brId">
+                        </div>
+
+                        <div class="form-group" class="col-md-6">
+                            <label for="orgId">orgId</label>
+                            <input type="number" [(ngModel)]="addObject.orgId" name="orgId" placeholder="enter " class="form-control"
+                                formControlName="orgId">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-4" style="margin-left: 290px;">Update</button>&nbsp;
+                </form>
+            </div>
+        </div>
+    </div><br>

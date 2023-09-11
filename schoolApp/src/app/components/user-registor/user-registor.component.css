@@ -1,0 +1,28 @@
+.container{
+    padding-top: 100px;
+    padding-left: 290px;
+    padding-right: 290px;
+}
+.card{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.card,input{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+label{
+    font-weight: bold;
+}
+h1{
+    color: blue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 150px;
+}
+button{
+    margin-left: 290px;
+    margin-bottom: 5px;
+}
+/* body{
+background-color: rgb(106, 152, 152);
+} */

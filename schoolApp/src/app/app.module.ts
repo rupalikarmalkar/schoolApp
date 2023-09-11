@@ -17,6 +17,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserRegistorComponent } from './components/user-registor/user-registor.component';
+import { FiltterOrgPipe } from './appPipe/filtter-org.pipe';
+import { InventoryModule } from './inventory/inventory.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { UserRegistorComponent } from './components/user-registor/user-registor.
     LoginComponent,
     // SignupComponent,
     UserRegistorComponent,
+    FiltterOrgPipe,
     
 
   ],
@@ -44,7 +47,8 @@ import { UserRegistorComponent } from './components/user-registor/user-registor.
      StudentModule,
      FormsModule,
      HttpClientModule,
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     InventoryModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

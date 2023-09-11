@@ -1,0 +1,421 @@
+<!-- <div class="container" *ngIf="itemFormHide"> -->
+<div class="container" *ngIf="quotationFormHide">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+            <legend style="text-align: center;">quotation Form</legend>
+            <br>
+
+            <form (ngSubmit)="onSubmit(quotationForm.value)" [formGroup]="quotationForm">
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="quotationDate">quotationDate</label>
+                        <input type="date" placeholder="enter last name" name="quotationDate" class="form-control"
+                            formControlName="quotationDate">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="partyCode">partyCode</label>
+                        <input type="number" class="form-control" placeholder="enter " name="partyCode"
+                            formControlName="partyCode">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="partyName">partyName</label>
+                        <input type="text" class="form-control" placeholder="enter " name="partyName"
+                            formControlName="partyName">
+                    </div>
+
+                    <div class="form-group" class="col-md-6">
+                        <label for="itemCode">itemCode</label>
+                        <input type="number" placeholder="enter quantity" name="itemCode" class="form-control"
+                            formControlName="itemCode">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="itemName">itemName</label>
+                        <input type="text" placeholder="enter Company name" name="itemName" class="form-control"
+                            formControlName="itemName">
+
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="partiCulars">partiCulars</label>
+                        <input type="text" placeholder="enter Company name" name="partiCulars" class="form-control"
+                            formControlName="partiCulars">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="rate">rate</label>
+                        <input type="number" name="rate" placeholder="enter " class="form-control"
+                            formControlName="rate">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="quantity">quantity</label>
+                        <input type="number" name="quantity" placeholder="enter " class="form-control"
+                            formControlName="quantity">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="discount">discount</label>
+                        <input type="number" name="discount" placeholder="enter " class="form-control"
+                            formControlName="discount">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="vat">vat</label>
+                        <input type="number" name="vat" placeholder="enter " class="form-control" formControlName="vat">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="amount">amount</label>
+                        <input type="number" name="amount" placeholder="enter " class="form-control"
+                            formControlName="amount">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="total">total</label>
+                        <input type="number" name="total" placeholder="enter " class="form-control"
+                            formControlName="total">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="frightCharges">frightCharges</label>
+                        <input type="number" name="frightCharges" placeholder="enter " class="form-control"
+                            formControlName="frightCharges">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="grandTotal">grandTotal</label>
+                        <input type="number" name="grandTotal" placeholder="enter " class="form-control"
+                            formControlName="grandTotal">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="mrp">mrp</label>
+                        <input type="number" name="mrp" placeholder="enter " class="form-control" formControlName="mrp">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="schme">schme</label>
+                        <input type="number" name="schme" placeholder="enter " class="form-control"
+                            formControlName="schme">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="cgst">cgst</label>
+                        <input type="number" name="cgst" placeholder="enter " class="form-control"
+                            formControlName="cgst">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="sgst">sgst</label>
+                        <input type="number" name="sgst" placeholder="enter " class="form-control"
+                            formControlName="sgst">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="cgstPer">cgstPer</label>
+                        <input type="number" name="cgstPer" placeholder="enter " class="form-control"
+                            formControlName="cgstPer">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="sgstPer">sgstPer</label>
+                        <input type="number" name="sgstPer" placeholder="enter " class="form-control"
+                            formControlName="sgstPer">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="igst">igst</label>
+                        <input type="number" name="igst" placeholder="enter " class="form-control"
+                            formControlName="igst">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="igstPer">igstPer</label>
+                        <input type="number" name="igstPer" placeholder="enter " class="form-control"
+                            formControlName="igstPer">
+                    </div>
+                </div>
+
+          <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="userId">userId</label>
+                        <input type="number" name="userId" placeholder="enter " class="form-control"
+                            formControlName="userId">
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="brId"></label>
+                        <input type="number" name="brId" placeholder="enter " class="form-control"
+                            formControlName="brId">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group" class="col-md-6">
+                        <label for="orgId">orgId</label>
+                        <input type="number" name="orgId" placeholder="enter " class="form-control" formControlName="orgId">
+
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-4" style="margin-left: 290px;">Submit</button>&nbsp;
+            </form>
+        </div>
+    </div>
+</div><br>
+<!-- ------------------------------------TABLE-------------------------------- -->
+
+ <div class="main">  
+    <br/>
+    <div *ngIf="titleHide" style="font-weight: bold;font-size: large;">{{titleName}}
+        <button type="submit"  *ngIf="quotationAddBtn" class="btn btn-primary" (click)="toggleAddBtn();titleToggle()">Add+</button>
+    </div>
+    <br/> 
+<table class="table table-striped" *ngIf="quotationLogHide">
+
+    <thead>
+        <tr class="table-info"  >
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">quotationNumber</th>
+            <th scope="col">quotationDate</th>
+            <th scope="col">partyCode</th>
+            <th scope="col">partyName</th>
+            <th scope="col">itemCode</th>
+            <th scope="col">itemName</th>
+            <th scope="col">partiCulars</th>
+            <th scope="col">rate</th>
+            <th scope="col">quantity</th>
+            <th scope="col">discount</th>
+            <th scope="col">vat</th>
+            <th scope="col">amount</th>
+            <th scope="col">total</th>
+            <th scope="col">frightCharges</th>
+            <th scope="col">grandTotal</th>
+            <th scope="col">mrp</th>
+            <th scope="col">schme</th>
+            <th scope="col">cgst</th>
+            <th scope="col">sgst</th>
+            <th scope="col">cgstPer</th>
+            <th scope="col">sgstPer</th>
+            <th scope="col">igst</th>
+            <th scope="col">igstPer</th>
+            <th scope="col">userId</th>
+            <th scope="col">brId</th>
+            <th scope="col">orgId</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let q of getQuotationArray">
+            <!-- <td><a class="text-primary" (click)="updateFormToggle();titleToggle();onEdit(p)"><i class="fa-solid fa-file-pen fa-lg"></i></a></td> -->
+
+            <td><a class="text-primary" (click)="updateFormToggle();titleToggle();edit(q)"><i class="fa-solid fa-file-pen fa-lg"></i></a></td>
+            <td><a class="text-danger"><i class="fa-sharp fa-solid fa-trash fa-lg"></i></a></td>
+            <td>{{q.quotationNumber}}</td>
+            <td>{{q.quotationDate}}</td>
+            <td>{{q.partyCode}}</td>
+            <td>{{q.partyName}}</td>
+            <td>{{q.itemCode}}</td>
+            <td>{{q.itemName}}</td>
+            <td>{{q.partiCulars}}</td>
+            <td>{{q.rate}}</td>
+            <td>{{q.quantity}}</td>
+            <td>{{q.discount}}</td>
+            <td>{{q.vat}}</td>
+            <td>{{q.amount}}</td>
+            <td>{{q.total}}</td>
+            <td>{{q.frightCharges}}</td>
+            <td>{{q.grandTotal}}</td>
+            <td>{{q.mrp}}</td>
+            <td>{{q.schme}}</td>
+            <td>{{q.cgst}}</td>
+            <td>{{q.sgst}}</td>
+            <td>{{q.cgstPer}}</td>
+            <td>{{q.sgstPer}}</td>
+            <td>{{q.igst}}</td>
+            <td>{{q.igstPer}}</td>
+            <td>{{q.userId}}</td>
+            <td>{{q.brId}}</td>
+            <td>{{q.orgId}}</td>
+        </tr>
+    </tbody>
+</table>
+<!-- ------------------------------------Update------------------------------------ -->
+<!-- <div class="container" *ngIf="itemFormHide"> -->
+    <div class="container" *ngIf="quotationUpdateFormHide" >
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-left rounded shadow py-5" style="background-color: transparent;">
+                <legend style="text-align: center;">updateQuotation  Form</legend>
+                <br>
+    
+                <form (ngSubmit)="updateQuotation()" [formGroup]="updateQuotationForm">
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="quotationDate">quotationDate</label>
+                            <input type="date" [(ngModel)]="quotationObject.quotationDate"  placeholder="enter last name" name="quotationDate" class="form-control"
+                                formControlName="quotationDate">
+                        </div>
+    
+                        <div class="form-group" class="col-md-6">
+                            <label for="partyCode">partyCode</label>
+                            <input type="number"  [(ngModel)]="quotationObject.partyCode"  class="form-control" placeholder="enter name" name="partyCode"
+                                formControlName="partyCode">
+                        </div>
+                    </div>
+                    <div class="row">
+    
+                        <div class="form-group" class="col-md-6">
+                            <label for="partyName">partyName</label>
+                            <input type="text"  [(ngModel)]="quotationObject.partyName"  class="form-control" placeholder="enter phone number" name="partyName"
+                                formControlName="partyName">
+                        </div>
+    
+                        <div class="form-group" class="col-md-6">
+                            <label for="itemCode">itemCode</label>
+                            <input type="number" [(ngModel)]="quotationObject.itemCode" placeholder="enter quantity" name="itemCode" class="form-control"
+                                formControlName="itemCode">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="itemName">itemName</label>
+                            <input type="text" [(ngModel)]="quotationObject.itemName" placeholder="enter Company name" name="itemName" class="form-control"
+                                formControlName="itemName">
+    
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="partiCulars">partiCulars</label>
+                            <input type="text" [(ngModel)]="quotationObject.itemName"  placeholder="enter Company name" name="partiCulars" class="form-control"
+                                formControlName="partiCulars">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="rate">rate</label>
+                            <input type="number"  [(ngModel)]="quotationObject.itemName" name="rate" placeholder="enter " class="form-control"
+                                formControlName="rate">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="quantity">quantity</label>
+                            <input type="number" [(ngModel)]="quotationObject.itemName" name="quantity" placeholder="enter " class="form-control"
+                                formControlName="quantity">
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="discount">discount</label>
+                            <input type="number"  [(ngModel)]="quotationObject.itemName" name="discount" placeholder="enter " class="form-control"
+                                formControlName="discount">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="vat">vat</label>
+                            <input type="number"  [(ngModel)]="quotationObject.itemName" name="vat" placeholder="enter " class="form-control" formControlName="vat">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="amount">amount</label>
+                            <input type="number" [(ngModel)]="quotationObject.itemName" name="amount" placeholder="enter " class="form-control"
+                                formControlName="amount">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="total">total</label>
+                            <input type="number" [(ngModel)]="quotationObject.total" name="total" placeholder="enter " class="form-control"
+                                formControlName="total">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="frightCharges">frightCharges</label>
+                            <input type="number"  [(ngModel)]="quotationObject.frightCharges" name="frightCharges" placeholder="enter " class="form-control"
+                                formControlName="frightCharges">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="grandTotal">grandTotal</label>
+                            <input type="number"  [(ngModel)]="quotationObject.grandTotal"  name="grandTotal" placeholder="enter " class="form-control"
+                                formControlName="grandTotal">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="mrp">mrp</label>
+                            <input type="number"  [(ngModel)]="quotationObject.mrp" name="mrp" placeholder="enter " class="form-control" formControlName="mrp">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="schme">schme</label>
+                            <input type="number"  [(ngModel)]="quotationObject.schme" name="schme" placeholder="enter " class="form-control"
+                                formControlName="schme">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="cgst">cgst</label>
+                            <input type="number" [(ngModel)]="quotationObject.cgst" name="cgst" placeholder="enter " class="form-control"
+                                formControlName="cgst">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="sgst">sgst</label>
+                            <input type="number"  [(ngModel)]="quotationObject.sgst"  name="sgst" placeholder="enter " class="form-control"
+                                formControlName="sgst">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="cgstPer">cgstPer</label>
+                            <input type="number"  [(ngModel)]="quotationObject.cgstPer" name="cgstPer" placeholder="enter " class="form-control"
+                                formControlName="cgstPer">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="sgstPer">sgstPer</label>
+                            <input type="number" [(ngModel)]="quotationObject.sgstPer"  name="sgstPer" placeholder="enter " class="form-control"
+                                formControlName="sgstPer">
+                        </div>
+                    </div>
+    
+    
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="igst">igst</label>
+                            <input type="number"  [(ngModel)]="quotationObject.igst" name="igst" placeholder="enter " class="form-control"
+                                formControlName="igst">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="igstPer">igstPer</label>
+                            <input type="number"  [(ngModel)]="quotationObject.igstPer" name="igstPer" placeholder="enter " class="form-control"
+                                formControlName="igstPer">
+                        </div>
+                    </div>
+    
+                <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="userId">userId</label>
+                            <input type="number"  [(ngModel)]="quotationObject.userId"  name="userId" placeholder="enter " class="form-control"
+                                formControlName="userId">
+                        </div>
+                        <div class="form-group" class="col-md-6">
+                            <label for="brId">brId</label>
+                            <input type="number"  [(ngModel)]="quotationObject.brId"  name="brId" placeholder="enter " class="form-control"
+                                formControlName="brId">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group" class="col-md-6">
+                            <label for="orgId">orgId</label>
+                            <input type="number" [(ngModel)]="quotationObject.orgId" name="orgId" placeholder="enter " class="form-control" 
+                            formControlName="orgId">
+    
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-4" style="margin-left: 290px;">Update</button>&nbsp;
+                </form>
+            </div>
+        </div>
+    </div><br>
